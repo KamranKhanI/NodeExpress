@@ -1,70 +1,79 @@
-
 <!DOCTYPE html>
 <html lang="en">
-   
-    <%- include('../partials/header.ejs') %> 
+
+<%- include('../partials/header.ejs') %>
 
     <body>
         <h1 class="text-left">Node js Blogs</h1>
-    
-        <%- include('../partials/menu.ejs') %> 
-      
-    
-        <div>
-            <h2>Create New Blog</h2>
-        </div>
-      
-      
-        <hr>
-      
 
-    <div class="row">
-        <div class="cell-3 offset-2">
+        <%- include('../partials/menu.ejs') %>
+
+
             <div>
-                <div class="card">
-                    <div class="card-header">
-                        <div class="avatar">
-                            <img src="http://lorempixel.com/68/68/people/">
+                <h2>Create New Blog</h2>
+            </div>
+
+
+            <hr>
+            <div class="row">
+
+                <% if(blog.length> 0){ %>
+
+
+                    <% blog.forEach(blogData=>{ %>
+
+                        <div class="cell-3 offset-2">
+
+
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="avatar">
+                                        <img src="http://lorempixel.com/68/68/people/">
+                                    </div>
+                                    <div class="name">
+                                        <%= blogData.title %>
+                                    </div>
+                                    <div class="date">
+                                        <%= blogData.email %>
+                                    </div>
+                                </div>
+                                <div class="card-content p-2">
+                                    <p>
+                                        <%= blogData.blog %>
+                                    </p>
+                                </div>
+                                <div class="card-content p-2">
+                                    <img src="http://lorempixel.com/1000/600/" style="width: 100%">
+                                </div>
+                                <div class="card-footer">
+                                    <button class="button primary">Details</button>
+                                    <button class="button alert">Delete</button>
+                                    <button class="flat-button mif-thumbs-up"></button>
+                                    <button class="flat-button mif-thumbs-down"></button>
+                                  
+                                </div>
+                            </div>
                         </div>
-                        <div class="name">John Doe</div>
-                        <div class="date">Monday at 3:47 PM</div>
-                    </div>
-                    <div class="card-content p-2">
-                        <img src="http://lorempixel.com/1000/600/" style="width: 100%">
-                    </div>
-                    <div class="card-footer">
-                        <button class="flat-button mif-thumbs-up"></button>
-                        <button class="flat-button mif-tag"></button>
-                        <button class="flat-button mif-share"></button>
-                    </div>
-                </div>
-            </div></div>
-        <div class="cell-3 offset-2"><div> <div class="card">
-            <div class="card-header">
-                <div class="avatar">
-                    <img src="http://lorempixel.com/68/68/people/">
-                </div>
-                <div class="name">John Doe</div>
-                <div class="date">Monday at 3:47 PM</div>
+
+
+
+
+
+
+                        <% }) %>
+
+
+                            <% } %>
+
+
+
+
+
+
             </div>
-                <!-- <div class="card-content p-2">
-                    What a nice photo i took yesterday!
-                </div> -->
-            <div class="card-content">
-                <img src="http://lorempixel.com/1000/600/" style="width: 100%">
-            </div>
-            <!-- <div class="card-content fg-gray p-2">
-                <span><small>Likes: </small>112</span>
-                <span><small>Comments: </small>43</span>
-            </div> -->
-            <div class="card-footer">
-                <button class="flat-button mif-thumbs-up mif-2x"></button>
-                <button class="flat-button mif-tag mif-2x"></button>
-                <button class="flat-button mif-share mif-2x"></button>
-            </div>
-        </div></div></div>
-    </div>
-  
-   
-</body>
+
+
+    </body>
+
 </html>
